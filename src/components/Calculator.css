@@ -1,0 +1,353 @@
+.calculator {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  display: flex;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  border: 1px solid var(--border);
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--primary-glow);
+}
+
+.mode-toggle.sub-toggle {
+  background: transparent;
+  padding: 0;
+  gap: 8px;
+  margin-bottom: 8px;
+  border: none;
+}
+
+.sub-toggle .mode-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+}
+
+.sub-toggle .mode-btn.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: none;
+}
+
+/* Preset Buttons */
+.presets {
+  display: flex;
+  gap: 8px;
+}
+
+.preset-btn {
+  flex: 1;
+  padding: 10px 4px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+.preset-btn:active {
+  transform: scale(0.95);
+}
+
+/* Rounding Toggle */
+.rounding-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rounding-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding-left: 4px;
+}
+
+.rounding-options {
+  display: flex;
+  gap: 6px;
+}
+
+.rounding-btn {
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rounding-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding-left: 4px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 0 16px;
+  transition: all 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.input-prefix,
+.input-suffix {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 14px 8px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  width: 100%;
+  -moz-appearance: textfield;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--text-muted);
+}
+
+.input-wrapper input::-webkit-outer-spin-button,
+.input-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Slider */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+}
+
+.slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    var(--primary) 0%,
+    var(--primary) var(--slider-pct),
+    var(--border) var(--slider-pct),
+    var(--border) 100%
+  );
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--bg);
+  box-shadow: 0 2px 8px var(--primary-glow);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--bg);
+  box-shadow: 0 2px 8px var(--primary-glow);
+  cursor: pointer;
+}
+
+.slider-value {
+  min-width: 52px;
+  text-align: right;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Buttons */
+.btn-clear {
+  width: 100%;
+  margin-top: 4px;
+  padding: 14px 24px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clear:active {
+  background: var(--surface);
+  border-color: var(--text-muted);
+}
+
+/* Results Card */
+.results-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.result-row.highlight {
+  padding: 12px 0;
+}
+
+.result-label {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.result-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.result-row.highlight .result-value {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.result-row.highlight .result-label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.result-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+}
+
+.btn-save {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: 2px solid var(--primary);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-save:active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-save.saved {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+  cursor: default;
+}

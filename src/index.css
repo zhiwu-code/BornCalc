@@ -1,0 +1,56 @@
+:root {
+  /* Børn — warm, earthy, refined */
+  --primary: #34788F;
+  --primary-bright: #3d8ba5;
+  --primary-light: rgba(52, 120, 143, 0.12);
+  --primary-glow: rgba(52, 120, 143, 0.30);
+  --accent: #763E2D;
+  --accent-light: rgba(118, 62, 45, 0.12);
+  --success: #22c55e;
+  --danger: #c0392b;
+  --danger-bg: rgba(192, 57, 43, 0.10);
+
+  --bg: #f5f0eb;
+  --surface: #ffffff;
+  --surface-raised: #faf7f4;
+  --border: #e0d6cc;
+  --border-light: #ebe3da;
+
+  --text-primary: #2c2420;
+  --text-secondary: #6b5e54;
+  --text-muted: #a89888;
+
+  /* iOS safe areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Prevent pull-to-refresh on iOS */
+body {
+  overflow: hidden;
+}
+
+input, button {
+  font-family: inherit;
+}
